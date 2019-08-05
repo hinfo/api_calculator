@@ -2,7 +2,6 @@
 # *-* coding:utf-8 -*-
 from flask import Flask
 from flask import jsonify
-from flask import request
 from flask_swagger import swagger
 
 app = Flask(__name__)
@@ -11,7 +10,8 @@ app = Flask(__name__)
 #  = "/api/components/schemas"
 
 
-class Messages():
+class Messages:
+    """Enum para mensagens"""
     EMPTY = "Dados vazios"
     NONE = "Resultado não encontrado!"
     CREATED = "Criado com sucesso!"
