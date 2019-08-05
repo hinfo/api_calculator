@@ -21,23 +21,24 @@ class Messages():
 
 @app.route("/spec")
 def spec():
+    """Interface para o swagger"""
     swag = swagger(app)
     swag['info']['version'] = "1.0"
-    swag['info']['title'] = "Dibra API"
+    swag['info']['title'] = "API Calculator"
     return jsonify(swag)
 
 
 @app.route("/")
 def home():
+    """Home"""
     return "API Calculator"
 
 
 @app.route("/soma/<numero_1>/<numero_2>", methods=['GET'])
 def get_soma(numero_1, numero_2):
+    """Soma dois numeros"""
     response = int(numero_1) + int(numero_2)
     return jsonify({'resultado': response})
-
-
 
 
 if __name__ == '__main__':
